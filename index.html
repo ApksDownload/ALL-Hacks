@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ Elite APK Vault | Premium Hacks</title>
+    <style>
+        :root {
+            --primary: #7f5af0;
+            --secondary: #2cb67d;
+            --accent: #ff7e6b;
+            --text: #16161a;
+            --bg: #fffffe;
+            --card-bg: #f9f4ef;
+            --header-bg: rgba(249, 244, 239, 0.9);
+            --shadow: rgba(0, 0, 0, 0.05);
+            --overlay: rgba(22, 22, 26, 0.3);
+        }
+
+        .dark-mode {
+            --primary: #7f5af0;
+            --secondary: #2cb67d;
+            --accent: #ff7e6b;
+            --text: #fffffe;
+            --bg: #16161a;
+            --card-bg: #242629;
+            --header-bg: rgba(36, 38, 41, 0.9);
+            --shadow: rgba(0, 0, 0, 0.3);
+            --overlay: rgba(0, 0, 0, 0.5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 0;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Smooth Scroll Snap */
+        html {
+            scroll-snap-type: y proximity;
+        }
+
+        section {
+            scroll-snap-align: start;
+        }
+
+        /* Luxury Glass Morphism Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 12px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--header-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px var(--shadow);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .telegram-btn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 20px rgba(127, 90, 240, 0.3);
+        }
+
+        .telegram-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(127, 90, 240, 0.4);
+        }
+
+        .theme-toggle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--card-bg);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(15deg) scale(1.1);
+        }
+
+        /* Premium Search Bar */
+        .search-container {
+            padding: 100px 5% 30px;
+            position: relative;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 16px 24px 16px 50px;
+            border-radius: 50px;
+            border: none;
+            background: var(--card-bg);
+            color: var(--text);
+            font-size: 16px;
+            box-shadow: 0 5px 25px var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .search-bar:focus {
+            outline: none;
+            box-shadow: 0 8px 30px var(--shadow);
+            transform: translateY(-2px);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 7%;
+            top: 108px;
+            color: var(--primary);
+            font-size: 20px;
+        }
+
+        /* Luxury Title */
+        .section-title {
+            padding: 0 5%;
+            margin: 20px 0 30px;
+            font-size: 28px;
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 5%;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        /* Elite APK Grid */
+        .apk-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+            padding: 0 5% 60px;
+        }
+
+        .apk-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 8px 30px var(--shadow);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(30px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .apk-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .apk-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(127, 90, 240, 0.1), rgba(44, 182, 125, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .apk-card:hover::before {
+            opacity: 1;
+        }
+
+        .apk-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 40px var(--shadow);
+        }
+
+        .apk-logo {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            margin: 0 auto 15px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 12px;
+            box-shadow: 0 5px 15px var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .apk-card:hover .apk-logo {
+            transform: rotate(5deg) scale(1.1);
+        }
+
+        .apk-name {
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 16px;
+            text-align: center;
+            color: var(--text);
+            transition: all 0.3s ease;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+        }
+
+        .download-btn:hover::after {
+            transform: rotate(45deg) translate(30px, 30px);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(127, 90, 240, 0.4);
+        }
+
+        /* Floating Particles Background */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.15;
+        }
+
+        /* Smooth Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 5% 50px;
+            font-size: 14px;
+            opacity: 0.8;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        /* Scroll Indicator */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            z-index: 1000;
+            transition: width 0.1s ease;
+        }
+
+        /* Download Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--overlay);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            box-shadow: 0 20px 50px var(--shadow);
+        }
+
+        .modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-title {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .modal-btn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .modal-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(127, 90, 240, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .apk-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+            
+            .search-icon {
+                left: 8%;
+                top: 108px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Floating Particles -->
+    <canvas class="particles" id="particles"></canvas>
+
+    <!-- Header -->
+    <header class="header">
+        <a href="https://telegram.dog/EarningScripter1" class="telegram-btn" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM15.64 8.8C15.49 9.38 15.09 10.84 14.73 12.42C14.57 13.08 14.31 13.28 14.03 13.28C13.45 13.29 12.97 12.82 12.38 12.41C11.53 11.82 10.99 11.45 10.17 10.88C9.48 10.4 9.92 10.15 10.38 9.74C10.5 9.63 10.71 9.42 10.83 9.3C11.19 8.94 11.56 8.56 12.08 8.24C12.34 8.08 12.58 8.16 12.74 8.42C12.84 8.59 12.9 9.04 12.8 9.11C12.71 9.18 11.5 9.93 9.94 10.94C9.5 11.21 9.1 11.34 8.74 11.34C8.22 11.33 7.75 11.1 7.34 10.65C6.82 10.09 6.5 9.41 6.5 8.62C6.5 8.21 6.58 7.83 6.74 7.5C6.9 7.17 7.16 6.94 7.5 6.82C7.82 6.7 8.26 6.64 8.74 6.64C9.42 6.64 10.16 6.82 10.94 7.18C12.5 7.92 13.45 8.36 14.08 8.5C14.71 8.64 15.23 8.58 15.64 8.8Z" fill="white"/>
+            </svg>
+            Join Channel
+        </a>
+        <button class="theme-toggle" id="themeToggle">☀</button>
+    </header>
+
+    <!-- Search -->
+    <section class="search-container">
+        <div class="search-icon">🔍</div>
+        <input type="text" class="search-bar" id="searchBar" placeholder="Search premium hacks...">
+    </section>
+
+    <!-- Main Content -->
+    <h2 class="section-title">Elite APK Collection</h2>
+
+    <div class="apk-grid" id="apkGrid">
+        <!-- APKs will be loaded here -->
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        More elite hacks coming soon
+    </div>
+
+    <!-- Download Modal -->
+    <div class="modal" id="downloadModal">
+        <div class="modal-content">
+            <h3 class="modal-title">Download APK</h3>
+            <p id="modalText">Preparing your download...</p>
+            <button class="modal-btn" id="confirmDownload">Download Now</button>
+        </div>
+    </div>
+
+    <script>
+        // APK Data with download URLs
+        const apks = [
+            { name: "91club Hack", logo: "logo1.png", url: "#" },
+            { name: "55club Hack", logo: "logo2.png", url: "#" },
+            { name: "In999 Hack", logo: "logo3.png", url: "#" },
+            { name: "OkWin Hack", logo: "logo4.png", url: "#" },
+            { name: "Tiranga Hack", logo: "logo5.png", url: "#" },
+            { name: "Daman Hack", logo: "logo6.png", url: "#" },
+            { name: "Bigmumbai Hack", logo: "logo7.png", url: "#" },
+            { name: "Bigdaddy Hack", logo: "logo8.png", url: "#" },
+            { name: "Bdgwin Hack", logo: "logo9.png", url: "#" },
+            { name: "JalwaWin Hack", logo: "logo10.png", url: "#" },
+            { name: "Tashan Hack", logo: "logo11.png", url: "#" },
+            { name: "DiuWin Hack", logo: "logo12.png", url: "#" },
+            { name: "82lottery Hack", logo: "logo13.png", url: "#" },
+            { name: "51game Hack", logo: "logo14.png", url: "#" },
+            { name: "Goagame Hack", logo: "logo15.png", url: "#" },
+            { name: "Rajagames Hack", logo: "logo16.png", url: "#" },
+            { name: "Ogclub Hack", logo: "logo17.png", url: "#" }
+        ];
+
+        // DOM Elements
+        const apkGrid = document.getElementById('apkGrid');
+        const searchBar = document.getElementById('searchBar');
+        const themeToggle = document.getElementById('themeToggle');
+        const scrollProgress = document.getElementById('scrollProgress');
+        const downloadModal = document.getElementById('downloadModal');
+        const modalText = document.getElementById('modalText');
+        const confirmDownload = document.getElementById('confirmDownload');
+        let currentDownload = null;
+
+        // Initialize Particles
+        const canvas = document.getElementById('particles');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const particles = [];
+        const particleCount = window.innerWidth < 768 ? 30 : 60;
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 3 + 1;
+                this.speedX = Math.random() * 1 - 0.5;
+                this.speedY = Math.random() * 1 - 0.5;
+                this.color = getComputedStyle(document.documentElement).getPropertyValue('--primary');
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+                if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+            }
+
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+            }
+            requestAnimationFrame(animateParticles);
+        }
+
+        initParticles();
+        animateParticles();
+
+        // Render APKs
+        function renderAPKs(filter = '') {
+            apkGrid.innerHTML = '';
+            const filtered = apks.filter(apk => 
+                apk.name.toLowerCase().includes(filter.toLowerCase())
+            );
+            
+            if (filtered.length === 0) {
+                apkGrid.innerHTML = `
+                    <div style="grid-column:1/-1;text-align:center;padding:40px;font-size:16px;">
+                        No hacks found. Request in our Telegram group.
+                    </div>
+                `;
+                return;
+            }
+
+            filtered.forEach((apk, i) => {
+                const card = document.createElement('div');
+                card.className = 'apk-card';
+                card.style.transitionDelay = `${i * 0.05}s`;
+                card.innerHTML = `
+                    <img src="${apk.logo}" alt="${apk.name}" class="apk-logo">
+                    <div class="apk-name">${apk.name}</div>
+                    <button class="download-btn" data-url="${apk.url}" data-name="${apk.name}">Download</button>
+                `;
+                apkGrid.appendChild(card);
+                
+                // Trigger animation
+                setTimeout(() => {
+                    card.classList.add('visible');
+                }, 100);
+            });
+
+            // Add download event listeners
+            document.querySelectorAll('.download-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    currentDownload = {
+                        name: btn.dataset.name,
+                        url: btn.dataset.url
+                    };
+                    modalText.textContent = `Download ${btn.dataset.name} APK`;
+                    downloadModal.classList.add('active');
+                });
+            });
+        }
+
+        // Search functionality
+        searchBar.addEventListener('input', () => {
+            renderAPKs(searchBar.value);
+        });
+
+        // Theme toggle
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            themeToggle.textContent = document.body.classList.contains('dark-mode') ? '🌙' : '☀';
+            localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+            
+            // Update particles color
+            particles.forEach(p => {
+                p.color = getComputedStyle(document.documentElement).getPropertyValue('--primary');
+            });
+        });
+
+        // Check saved theme
+        if (localStorage.getItem('theme') === 'dark' || 
+            (window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('theme'))) {
+            document.body.classList.add('dark-mode');
+            themeToggle.textContent = '🌙';
+        }
+
+        // Scroll progress
+        window.addEventListener('scroll', () => {
+            const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollProgress = (window.scrollY / scrollTotal) * 100;
+            document.getElementById('scrollProgress').style.width = scrollProgress + '%';
+        });
+
+        // Modal functionality
+        confirmDownload.addEventListener('click', () => {
+            if (currentDownload) {
+                // In a real app, you would trigger the download here
+                // window.location.href = currentDownload.url;
+                alert(`In a real app, ${currentDownload.name} would download now`);
+                downloadModal.classList.remove('active');
+            }
+        });
+
+        // Close modal when clicking outside
+        downloadModal.addEventListener('click', (e) => {
+            if (e.target === downloadModal) {
+                downloadModal.classList.remove('active');
+            }
+        });
+
+        // Initialize
+        renderAPKs();
+
+        // Animate cards on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.apk-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Resize handler
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
