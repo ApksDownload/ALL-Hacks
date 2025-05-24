@@ -567,12 +567,26 @@
             document.querySelectorAll('.download-btn').forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    currentDownload = {
-                        name: btn.dataset.name,
-                        url: btn.dataset.url
-                    };
-                    modalText.textContent = `Download ${btn.dataset.name} APK`;
-                    downloadModal.classList.add('active');
+                    const url = btn.dataset.url;
+                    const name = btn.dataset.name;
+                    
+                    if (url && url !== "#") {
+                        // Create a temporary anchor element to trigger download
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = url.split('/').pop() || `${name.replace(/\s+/g, '_')}.apk`;
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                    } else {
+                        // Show modal for APKs without download links
+                        currentDownload = {
+                            name: name,
+                            url: url
+                        };
+                        modalText.textContent = `Download ${name} APK`;
+                        downloadModal.classList.add('active');
+                    }
                 });
             });
         }
@@ -612,8 +626,7 @@
         confirmDownload.addEventListener('click', () => {
             if (currentDownload) {
                 // In a real app, you would trigger the download here
-                // window.location.href = currentDownload.url;
-                alert(`In a real app, ${currentDownload.name} would download now`);
+                alert(`Download link not available for ${currentDownload.name}`);
                 downloadModal.classList.remove('active');
             }
         });
